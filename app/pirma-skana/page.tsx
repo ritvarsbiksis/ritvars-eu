@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function PirmaSkanaPage() {
   return (
-    <main className="flex min-h-screen flex-col items-left p-24 pt-12 box-content flex-wrap">
+    <main className="flex min-h-screen flex-col items-left p-16 pt-12 box-content flex-wrap">
       <Link className="mb-12 select-none" href={"/"}>
         <div className="flex font-medium ">
           <ArrowBack className="mr-2" />
@@ -21,7 +21,7 @@ export default function PirmaSkanaPage() {
         <div className="min-w-fit">
           <PirmaSkanaIcon />
         </div>
-        <div style={{ maxWidth: 600 }} className="min-w-64">
+        <div style={{ maxWidth: 600 }} className="min-w-44">
           <h1 className="text-3xl font-medium ">Pirmā skaņa</h1>
           <div className="text-xl font-light flex-col mt-10 flex gap-6">
             <p>
