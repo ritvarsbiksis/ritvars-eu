@@ -10,7 +10,7 @@ export default function PrivatumaPolitikaPage() {
         <h1 className="text-3xl font-medium ">
           Aplikācijas “Pirmā Skaņa” Privātuma politika
         </h1>
-        <div>Atjaunota: 05.11.2023</div>
+        <div>Atjaunota: 03.01.2024</div>
         <div className="text-xl font-light flex-col mt-10 flex gap-6">
           <h2 className="text-xl font-medium pt-8">Iepazīstināšana:</h2>
           <p>
