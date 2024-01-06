@@ -1,7 +1,7 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image'
+import React from 'react'
 
-import pirmaSkanaIcon from "./images/pirma-skana-icon.png";
+import pirmaSkanaIcon from './images/pirma-skana-icon.png'
 
 export const PirmaSkanaIcon = () => (
   <Image
@@ -11,4 +11,4 @@ export const PirmaSkanaIcon = () => (
     height={180}
     alt="Pirmā skaņa"
   />
-);
+)

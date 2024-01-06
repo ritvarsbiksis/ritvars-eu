@@ -1,9 +1,9 @@
-import { PirmaSkanaApp } from "./_components/pirma-skana-app/pirma-skana-app";
+import { PirmaSkanaApp } from './_components/pirma-skana-app/pirma-skana-app'
 
 export const metadata = {
   title: `Ritvars Bikšis`,
-  description: "Front-end developer",
-};
+  description: 'Front-end developer',
+}
 
 export default function Home() {
   return (
@@ -12,5 +12,5 @@ export default function Home() {
         <PirmaSkanaApp />
       </div>
     </main>
-  );
+  )
 }
