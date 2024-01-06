@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { ArrowBack } from "@/components/icons/arrow-back/arrow-back";
 import { PirmaSkanaIcon } from "@/components/pirma-skana-icon/pirma-skana-icon";
+import { LejupladeAppStore } from "@/components/lejuplade-app-store/lejuplade-app-store";
 
 export const metadata = {
   title: `Pirmā skaņa`,
@@ -18,8 +19,12 @@ export default function PirmaSkanaPage() {
         </div>
       </Link>
       <div className="flex gap-12 flex-wrap ">
-        <div className="min-w-fit">
+        <div className="min-w-fit flex flex-col gap-4">
           <PirmaSkanaIcon />
+          <LejupladeAppStore
+            width={180}
+            href="https://apps.apple.com/us/app/pirm%C4%81-ska%C5%86a/id6475353129"
+          />
         </div>
         <div style={{ maxWidth: 600 }} className="min-w-44">
           <h1 className="text-3xl font-medium ">Pirmā skaņa</h1>
