@@ -1,6 +1,6 @@
 import clientPromise from '@/lib/mongodb'
 import { Device, ReceivedData } from '@/models/device'
-import { Timestamp } from 'mongodb'
+import { ObjectId, Timestamp } from 'mongodb'
 import { NextRequest, NextResponse } from 'next/server'
 
 interface DatacackeData {
@@ -32,12 +32,14 @@ export async function POST(request: NextRequest) {
     const client = await clientPromise
     const db = client.db(DB_NAME)
 
-    const device = await db
+    let deviceId: ObjectId = null
+
+    const savedDevice = await db
       .collection<Device>(DEVICES_COLLECTION_NAME)
       .findOne({ device: data.data.device })
 
     const {
-      device: deviceId,
+      device,
       device_location,
       device_name,
       device_serial,
@@ -46,19 +48,23 @@ export async function POST(request: NextRequest) {
       product_slug,
     } = data.data
 
-    if (!device)
-      await db.collection<Device>(DEVICES_COLLECTION_NAME).insertOne({
-        device: deviceId,
-        device_location,
-        device_name,
-        device_serial,
-        device_tags,
-        product_id,
-        product_slug,
-      })
+    if (savedDevice) deviceId = savedDevice._id
+    else
+      await db
+        .collection<Device>(DEVICES_COLLECTION_NAME)
+        .insertOne({
+          device,
+          device_location,
+          device_name,
+          device_serial,
+          device_tags,
+          product_id,
+          product_slug,
+        })
+        .then(({ insertedId }) => (deviceId = insertedId))
 
     const receivedData: ReceivedData = {
-      deviceId: device._id,
+      deviceId,
       timestamp: new Timestamp(null),
     }
 
